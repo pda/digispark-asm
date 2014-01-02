@@ -23,5 +23,8 @@ main.o: main.s
 clean:
 	rm -f main.hex main.elf main.o main.list
 
-dump:
-	$(OBJDUMP) -m avr -h -d main
+dumphex:
+	$(OBJDUMP) -m avr -D main.hex
+
+dumpelf:
+	$(OBJDUMP) -h -d main.elf
