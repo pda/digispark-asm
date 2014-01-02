@@ -17,7 +17,7 @@ main.hex: main.elf
 main.elf: main.o
 	$(CC) -Os -mmcu=$(MCU) -o main.elf main.o
 
-main.o:
+main.o: main.s
 	$(AS) -Wall -mmcu=$(MCU) -a=main.list -o main.o main.s
 
 clean:
