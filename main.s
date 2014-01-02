@@ -32,17 +32,17 @@ busywait:
   PUSH r21
   PUSH r22
 
-  busywaitOuter:
-    LDI r21, 0xFF
-    busywaitInner:
-      LDI r22, 0xFF
-      busywaitInnerInner:
-        DEC r22
-        BRNE busywaitInnerInner
-      DEC r21
-      BRNE busywaitInner
-    DEC r20
-    BRNE busywaitOuter
+busywaitOuter:
+  LDI r21, 0xFF
+busywaitInner:
+  LDI r22, 0xFF
+busywaitInnerInner:
+  DEC r22
+  BRNE busywaitInnerInner
+  DEC r21
+  BRNE busywaitInner
+  DEC r20
+  BRNE busywaitOuter
 
   POP r22
   POP r21
